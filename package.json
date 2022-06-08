@@ -1,0 +1,19 @@
+{
+  "name": "leg_bot_js",
+  "version": "1.0.0",
+  "description": "Me bot",
+  "main": "leg_bot.js",
+  "scripts": {
+    "start": "node leg_bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vansh Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^0.15.0",
+    "discord.js": "^13.8.0",
+    "dotenv": "^16.0.1",
+    "fs": "^0.0.1-security",
+    "op.gg-api": "^2.0.5-alpha"
+  }
+}
