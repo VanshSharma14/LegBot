@@ -20,17 +20,22 @@ client.on("ready", () => {
 
 const commands = getCommands();
 
-const PREFIX = "$"
+const PREFIX = "--"
 
 client.on("messageCreate", async msg => {
     console.log(msg.content)
+    if (msg.author.bot) {
+        return;
+    }
     if (msg.content.startsWith(PREFIX)) {
         let [cmdName, ...args] = msg.content.trim().split(/ +/);
         cmdName = cmdName.slice(PREFIX.length).toLowerCase();
         args = args.join(" ")
         let cmdObj = commands[cmdName]
+        console.log(cmdName);
         if (cmdObj){
             cmdObj.action(msg, args)
+            console.log("sendingCommand")
         }
     }
     if (msg.content.includes("ping")) {

@@ -7,8 +7,13 @@ module.exports = {
     description: "choose between one or more options",
     action: (msg, args) => {
         let content = args;
+        // $choose nice try
+        // "nice try"
+        if (args.includes("choose")) {
+            args = "nice try!"
+        }
         if(args.length == 0) {
-            msg.reply("At least put something there you whore!")
+            msg.reply("At least put something there stupid!")
             return;
         }
         let options = content.split(" or ")
