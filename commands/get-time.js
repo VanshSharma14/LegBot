@@ -1,11 +1,12 @@
 // Define a function that choses between two options
 module.exports = {
     name: "get-time",
-    usage: "get-time",
+    usage: "get-time <@user-optional>",
     description: "get the # of days since 4000 BC",
     action: (msg, args) => {
         const date = new Date().toLocaleDateString();
         // mm/dd/yyyy
+        args = args.join(" ")
         arg = args;
         let [month, day, year] = date.split("/").map(e => parseInt(e))
         let yearDays = Math.floor((year+4000)*365.25);

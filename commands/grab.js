@@ -1,19 +1,11 @@
-module.exports = {
-    name: "s",
-    usage: "s <find>/<replace>",
-    description: "find and replace",
-    action: async (msg, args) => {
-        // check for correct input and define variables
-        args = args.join(" ")
-        let contents = args;
-        let options = contents.split("/")
-        if (options.length != 2 || options[0]=="") {
-            msg.reply("usage: --s <find>/<replace>")
-            return;
-        }
 
-        // Messages.values = ["msg1", "msg2"]
-        
+
+module.exports = {
+    name: "grab",
+    usage: "grab <@user-optional>",
+    description: "choose between one or more options",
+    action: async (msg, args) => {
+        args = args.join(" ")
         await msg.channel.messages.fetch({limit: 10}).then(messages => {
             if (messages.size == 10) {
                 const arr = Array.from(messages.values());
@@ -37,8 +29,3 @@ module.exports = {
         })
     }
 }
-
-// input: i love unicorns and they are amazing
-// output: i love cocks and they are amazing
-
-// $s unicorn/cock

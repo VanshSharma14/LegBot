@@ -3,9 +3,10 @@ const { pickRandom } = require("../util");
 // Define a function that choses between two options
 module.exports = {
     name: "choose",
-    usage: "choose <options>",
+    usage: "choose <option1> or <option2>",
     description: "choose between one or more options",
     action: (msg, args) => {
+        args = args.join(" ")
         let content = args;
         // $choose nice try
         // "nice try"

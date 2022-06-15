@@ -12,7 +12,8 @@ intents.add("GUILD_MEMBERS")
 intents.add("GUILD_BANS")
 
 const client = new Discord.Client({intents: intents})
-
+const PREFIX = "--"
+exports.PREFIX = PREFIX;
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
@@ -20,7 +21,8 @@ client.on("ready", () => {
 
 const commands = getCommands();
 
-const PREFIX = "--"
+
+
 
 client.on("messageCreate", async msg => {
     console.log(msg.content)
@@ -30,7 +32,6 @@ client.on("messageCreate", async msg => {
     if (msg.content.startsWith(PREFIX)) {
         let [cmdName, ...args] = msg.content.trim().split(/ +/);
         cmdName = cmdName.slice(PREFIX.length).toLowerCase();
-        args = args.join(" ")
         let cmdObj = commands[cmdName]
         console.log(cmdName);
         if (cmdObj){
@@ -40,6 +41,9 @@ client.on("messageCreate", async msg => {
     }
     if (msg.content.includes("ping")) {
         msg.reply("pong");
+    }
+    if (msg.content.includes("fix")) {
+        msg.reply("ur mom")
     }
     
 })
