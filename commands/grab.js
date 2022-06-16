@@ -55,7 +55,7 @@ module.exports = {
                         //     console.log(result)
                         // })
                         // // msg.reply(`Found ya! ${contents}`)
-                        // return;
+                        return;
                     }
                     text = args[1].toLowerCase
                     console.log(arr[i].contents)
