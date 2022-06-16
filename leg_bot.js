@@ -1,4 +1,6 @@
 const Discord = require("discord.js")
+const mongoose = require("mongoose")
+const MongoClient = require('mongodb').MongoClient
 const { getCommands } = require("./util")
 require("dotenv").config()
 // declare intent
@@ -14,13 +16,25 @@ intents.add("GUILD_BANS")
 const client = new Discord.Client({intents: intents})
 const PREFIX = "--"
 exports.PREFIX = PREFIX;
-
-client.on("ready", () => {
-  console.log(`Logged in as ${client.user.tag}!`)
+let dbName = 'grab'
+client.on("ready", async () => {
+    await mongoose.connect(
+        process.env.MONGODB_URI,
+        {
+            keepAlive: true,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            dbName: dbName
+        }
+    ).then(() => {
+        console.log("MONGOOSE ON TEH CASE")
+    }).catch((err) => {
+        console.log(err.message)
+    })
+    console.log(`Logged in as ${client.user.tag}!`)
 }) 
 
 const commands = getCommands();
-
 
 
 
@@ -44,6 +58,7 @@ client.on("messageCreate", async msg => {
     }
     if (msg.content.includes("fix")) {
         msg.reply("ur mom")
+        msg.reply(`<@${msg.author.id}>`)
     }
     
 })
