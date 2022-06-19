@@ -17,18 +17,19 @@ module.exports = {
         await msg.channel.messages.fetch({limit: 20}).then(messages => {
             if (messages.size == 20) {
                 const arr = Array.from(messages.values());
-                let msgCtr = 0
                 for(let i = 1; i < arr.length; i++) {
                     // make sure it doesn't save a command
                     if(arr[i].content.includes("--")){
                          continue;
                     }
                     // msg.reply(`<@${msg.author.id}>`)
+                    let text = args[1].toLowerCase
+                    console.log(arr[i].contents)
+                    const lowQuote = arr[i].contents
                     username = `<@${arr[i].author.id}>`
                     console.log("Type: " + arr[i].content)
                     console.log("username: " + username + " " + contents)
-                    if (type == "user" && username == contents){
-
+                    if ((type == "user" && username == contents) || (type == "search" && arr[i].content.includes(args[1]))){
 
                         console.log("before")
                         console.log(`arr[i] ${arr[i].content}`)
@@ -42,26 +43,12 @@ module.exports = {
                         }
                         console.log("message saved")
                         // find saved message
-                        grabber.find({}, 'user quote', function (err, quotes)
+                        grabber.find({'user': username}, 'quote', function (err, quotes)
                         {
                             if (err) return handleError(err)
-                            else {
-                                console.log(quotes)
-                            }
                         })
-                        // ########## FIND #############
-                        // grabber.collection.find({}).toArray(function(err, result) {
-                        //     if (err) throw err
-                        //     console.log(result)
-                        // })
-                        // // msg.reply(`Found ya! ${contents}`)
-                        return;
-                    }
-                    text = args[1].toLowerCase
-                    console.log(arr[i].contents)
-                    const lowQuote = arr[i].contents
-                    if (type == "search" && arr[i].content.includes(args[1])) {
-                        msg.reply(`Fount text search: ${contents}`)
+
+                        msg.reply(`Added quote "${arr[i]}"`)
                         return;
                     }
                     
