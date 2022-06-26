@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+
+  mongo_db:
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/mongo_db
+  
+  legbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    depends_on:
+    - mongo_db
+
+volumes:
+  mongo_db: {}
