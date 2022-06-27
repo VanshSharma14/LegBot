@@ -16,4 +16,5 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           key: ${{ secrets.REMOTE_KEY }}
           debug: true
+          key_path: ~/.ssh/ga
           script: cd ~/LegBot && ./rebuild.sh
