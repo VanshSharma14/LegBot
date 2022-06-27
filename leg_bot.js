@@ -58,7 +58,7 @@ client.on("messageCreate", async msg => {
     }
     if (msg.content.includes("fix")) {
         msg.reply("ur mom")
-        //msg.reply(`<@${msg.author.id}>`)
+        //msg.reply(`<@${msg.author.id}>`) :D
     }
     
 })
