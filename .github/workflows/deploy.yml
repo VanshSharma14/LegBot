@@ -15,4 +15,4 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         host: ${{ secrets.REMOTE_HOST }}
         key: ${{ secrets.REMOTE_KEY }}
-        script: 'cd ~/LegBot && ./rebuild.sh'
+        script: cd ~/LegBot && ./rebuild.sh
