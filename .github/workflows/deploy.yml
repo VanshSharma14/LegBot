@@ -9,10 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to ubuntu
-      uses: appleboy/ssh-action@master
-      with:
-        username: ${{ secrets.REMOTE_USER }}
-        host: ${{ secrets.REMOTE_HOST }}
-        key: ${{ secrets.REMOTE_KEY }}
-        script: cd ~/LegBot && ./rebuild.sh
+      - name: Deploy to ubuntu
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ secrets.REMOTE_USER }}
+          host: ${{ secrets.REMOTE_HOST }}
+          key: ${{ secrets.REMOTE_KEY }}
+          script: cd ~/LegBot && ./rebuild.sh
