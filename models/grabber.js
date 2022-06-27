@@ -12,4 +12,3 @@ const grabScheme = new mongoose.Schema({
 })
 
 module.exports = mongoose.model("grabber", grabScheme)
-// ye
