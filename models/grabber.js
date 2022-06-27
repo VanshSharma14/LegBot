@@ -12,4 +12,4 @@ const grabScheme = new mongoose.Schema({
 })
 
 module.exports = mongoose.model("grabber", grabScheme)
-// lPLEAES
+// YES MONGO YES MONGO
