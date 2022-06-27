@@ -12,9 +12,8 @@ jobs:
       - name: Deploy to ubuntu
         uses: appleboy/ssh-action@master
         with:
-          username: ${{ secrets.REMOTE_USER }}
           host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.REMOTE_KEY }}
           debug: true
-          key_path: ~/.ssh/ga
           script: cd ~/LegBot && ./rebuild.sh
