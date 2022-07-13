@@ -13,7 +13,7 @@ module.exports = {
             const gptResponse = await openai.complete({
                 engine: 'text-davinci-002',
                 prompt: args,
-                maxTokens: 100,
+                maxTokens: 450,
                 temperature: 0.8,
                 topP: .3,
                 presencePenalty: 0,
