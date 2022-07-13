@@ -10,13 +10,16 @@ module.exports = {
     
     action: async (msg, args) => {
         args = args.join(" ");
-        args = (`${msg.author}: ${args}`)
+        args = `${msg.author}: ${args}`
+        // Piinto: motherfucker
+
         if (arr.length == 8) {
             arr.shift();
-            arr.push(args + "\n");
+            arr.shift()
+            
         }
-        else{arr.push(args+ "\n")}
-        let message = arr.join("")
+        arr.push(args + "\n");
+        let message = arr.join("");
 
         (async () => {
             const gptResponse = await openai.complete({
@@ -37,6 +40,7 @@ module.exports = {
         if (rep.length > 2000){
             rep = rep.substring(0, 2000)
         }
+        arr.push(`LegBot: ${rep}`);
         msg.reply(rep);
         })();
     }
