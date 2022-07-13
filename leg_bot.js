@@ -40,9 +40,9 @@ const commands = getCommands();
 
 client.on("messageCreate", async msg => {
     console.log(msg.content)
-    if (msg.author.bot) {
-        return;
-    }
+    // if (msg.author.bot) {
+    //     return;
+    // }
     if (msg.content.startsWith(PREFIX)) {
         let [cmdName, ...args] = msg.content.trim().split(/ +/);
         cmdName = cmdName.slice(PREFIX.length).toLowerCase();
