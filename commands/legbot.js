@@ -16,7 +16,7 @@ module.exports = {
             arr.push(args + "\n");
         }
         else{arr.push(args+ "\n")}
-        message = arr.join("")
+        let message = arr.join("")
 
         (async () => {
             const gptResponse = await openai.complete({
