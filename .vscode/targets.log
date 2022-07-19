@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Thu Jul 14 15:59:12 2022
+# Make data base, printed on Tue Jul 19 11:07:24 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ INFOPATH = /opt/homebrew/share/info:
 # environment
 VSCODE_CWD = /Users/vanshsharma/Documents/src/leg_bot_js
 # environment
-PATH = /Users/vanshsharma/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH = /Users/vanshsharma/opt/anaconda3/condabin:/Users/vanshsharma/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -56,6 +56,8 @@ ELECTRON_RUN_AS_NODE = 1
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.jplCERcg4W/Listeners
 # automatic
 %F = $(notdir $%)
+# environment
+CONDA_EXE = /Users/vanshsharma/opt/anaconda3/bin/conda
 # environment
 PWD = /Users/vanshsharma/Documents/src/leg_bot_js
 # environment
@@ -105,11 +107,13 @@ USER = vanshsharma
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:5B1B36FB-B78A-49D0-8DE9-DA2E2C960790
+TERM_SESSION_ID = w0t0p0:457BBADE-BEDB-4FCB-B1CE-45C9AC9E23BC
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
+# environment
+CONDA_SHLVL = 0
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # environment
@@ -133,7 +137,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.16
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.7008946.7008952.44161A39-4AE1-4860-A1A9-A6EB8B03AFAE
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.7008946.7008952.82DDD952-1F67-4FC5-94DB-B7544406D13D
 # environment
 LC_TERMINAL_VERSION = 3.4.16
 # environment
@@ -143,7 +147,7 @@ HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:5B1B36FB-B78A-49D0-8DE9-DA2E2C960790
+ITERM_SESSION_ID = w0t0p0:457BBADE-BEDB-4FCB-B1CE-45C9AC9E23BC
 # environment
 HOMEBREW_REPOSITORY = /opt/homebrew
 # environment
@@ -163,11 +167,15 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
+CONDA_PYTHON_EXE = /Users/vanshsharma/opt/anaconda3/bin/python
+# environment
 SECURITYSESSIONID = 186b1
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
+# environment
+_CE_M = 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -178,8 +186,10 @@ LANG = C
 TERM = xterm-256color
 # environment
 VSCODE_PID = 4435
+# environment
+_CE_CONDA = 
 # variable set hash-table stats:
-# Load=82/1024=8%, Rehash=0, Collisions=4/106=4%
+# Load=87/1024=8%, Rehash=0, Collisions=4/111=4%
 
 # Pattern-specific Variable Values
 
@@ -248,6 +258,6 @@ run:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jul 14 15:59:12 2022
+# Finished Make data base on Tue Jul 19 11:07:24 2022
 
  

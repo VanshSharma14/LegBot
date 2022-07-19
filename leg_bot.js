@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 const mongoose = require("mongoose")
 const MongoClient = require('mongodb').MongoClient
 const { getCommands } = require("./util")
+const { Player, QueryType } = require("discord-player");
 require("dotenv").config()
 // declare intent
 const intents = new Discord.Intents()
@@ -12,6 +13,7 @@ intents.add("GUILD_MESSAGE_REACTIONS")
 intents.add("DIRECT_MESSAGE_REACTIONS")
 intents.add("GUILD_MEMBERS")
 intents.add("GUILD_BANS")
+intents.add("GUILD_VOICE_STATES")
 
 const client = new Discord.Client({intents: intents})
 const PREFIX = "--"
@@ -36,6 +38,14 @@ client.on("ready", async () => {
 
 const commands = getCommands();
 
+const player = new Player(client);
+player.on("error", (queue, error) => {
+    console.log(`[${queue.guild.name}] Error emitted from the queue: ${error.message}`);
+});
+player.on("connectionError", (queue, error) => {
+    console.log(`[${queue.guild.name}] Error emitted from the connection: ${error.message}`);
+});
+
 
 
 client.on("messageCreate", async msg => {
@@ -53,10 +63,10 @@ client.on("messageCreate", async msg => {
             console.log("sendingCommand")
         }
     }
-    if (msg.content.includes("ping")) {
+    if (msg.content.toLowerCase().includes("ping")) {
         msg.reply("pong");
     }
-    if (msg.content.includes("fix")) {
+    if (msg.content.toLowerCase().includes("fix")) {
         msg.reply("ur mom")
         //msg.reply(`<@${msg.author.id}>`)
     }
