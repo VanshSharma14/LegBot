@@ -5,6 +5,8 @@ services:
   mongo_db:
     image: mongo:latest
     restart: always
+    logging:
+        driver: "none"
     volumes:
       - mongo_db:/data/mongo_db
   

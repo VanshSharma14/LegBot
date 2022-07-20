@@ -38,16 +38,6 @@ client.on("ready", async () => {
 
 const commands = getCommands();
 
-const player = new Player(client);
-player.on("error", (queue, error) => {
-    console.log(`[${queue.guild.name}] Error emitted from the queue: ${error.message}`);
-});
-player.on("connectionError", (queue, error) => {
-    console.log(`[${queue.guild.name}] Error emitted from the connection: ${error.message}`);
-});
-
-
-
 client.on("messageCreate", async msg => {
     console.log(msg.content)
     // if (msg.author.bot) {
