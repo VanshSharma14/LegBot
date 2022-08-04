@@ -61,7 +61,7 @@ client.on("messageCreate", async (msg) => {
         //msg.reply(`<@${msg.author.id}>`)
     }
     
-})
+}
 
 client.login(process.env.TOKEN);
 
