@@ -54,10 +54,10 @@ client.on("messageCreate", async msg => {
         }
     }
     if (msg.content.toLowerCase().includes("ping")) {
-        msg.reply("pong");
+        msg.channel.send("pong");
     }
     if (msg.content.toLowerCase().includes("fix")) {
-        msg.reply("ur mom")
+        msg.channel.send("ur mom")
         //msg.reply(`<@${msg.author.id}>`)
     }
     
