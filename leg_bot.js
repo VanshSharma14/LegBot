@@ -52,16 +52,15 @@ client.on("messageCreate", async (msg) => {
       cmdObj.action(msg, args);
       console.log("sendingCommand");
     }
-
-    if (msg.content.toLowerCase().includes("ping")) {
-        msg.channel.send("pong");
-    }
-    if (msg.content.toLowerCase().includes("fix")) {
-        msg.channel.send("ur mom")
-        //msg.reply(`<@${msg.author.id}>`)
-    }
-    
-}
+  }
+   if (msg.content.toLowerCase().includes("ping")) {
+      msg.channel.send("pong");
+  }
+  if (msg.content.toLowerCase().includes("fix")) {
+      msg.channel.send("ur mom") 
+     //msg.reply(`<@${msg.author.id}>`)
+  }
+}); 
 
 client.login(process.env.TOKEN);
 
