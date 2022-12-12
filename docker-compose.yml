@@ -5,6 +5,7 @@ services:
   mongo_db:
     image: mongo:latest
     restart: always
+    command: mongod --logpath /dev/null
     logging:
         driver: "none"
     volumes:
