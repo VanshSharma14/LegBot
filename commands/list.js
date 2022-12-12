@@ -1,7 +1,6 @@
 const { ContextMenuInteraction } = require("discord.js");
 const grabber = require("../models/grabber.js");
 
-// list all saved quotes by user
 module.exports = {
   name: "list",
   usage: "list <@user>",
