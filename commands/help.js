@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const { Binary } = require("mongodb");
 const { PREFIX } = require("../leg_bot");
 const { getCommands } = require("../util");
@@ -14,7 +14,7 @@ module.exports = {
       console.log(content);
       cmdObj = commands[content[0]];
       if (cmdObj) {
-        let commandsEmbed = new MessageEmbed()
+        let commandsEmbed = new EmbedBuilder()
           .setColor("AQUA")
           .setTitle("*" + cmdObj.name + "*")
           .addField("Usage", PREFIX + cmdObj.usage)
@@ -30,7 +30,7 @@ module.exports = {
       for (let cmdName in commands) {
         arr.push("`" + commands[cmdName].usage + "`");
       }
-      let commandsEmbed = new MessageEmbed()
+      let commandsEmbed = new EmbedBuilder()
         .setColor("#5432a8")
         .setTitle("LegBot Commands")
         .setDescription(

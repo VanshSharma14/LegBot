@@ -1,32 +1,26 @@
 const Discord = require("discord.js");
-const { Intents  } = Discord;
 const mongoose = require("mongoose");
 const MongoClient = require("mongodb").MongoClient;
 const { getCommands } = require("./util");
 const { Player, QueryType } = require("discord-player");
+const { GatewayIntentBits } = require("discord.js");
 require("dotenv").config();
-// declare intent
-Intents.set([
-    "GUILDS",
-    "DIRECT_MESSAGES",
-    "GUILD_MESSAGES",
-    "GUILD_MESSAGE_REACTIONS",
-    "GUILD_MEMBERS",
-    "GUILD_BANS", 
-    "GUILD_VOICE_STATES"
-  ]);
-//const intents = new Discord.Intents();
-//intents.add("GUILDS");
-//intents.add("DIRECT_MESSAGES");
-//intents.add("GUILD_MESSAGES");
-//intents.add("GUILD_MESSAGE_REACTIONS");
-//intents.add("DIRECT_MESSAGE_REACTIONS");
-//intents.add("GUILD_MEMBERS");
-//intents.add("GUILD_BANS");
-//intents.add("GUILD_VOICE_STATES");
 
-const client = new Discord.Client();
-const PREFIX = "--";
+// declare intent
+// "start": "node leg_bot.js",
+const client = new Discord.Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMessageReactions,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildBans,
+    GatewayIntentBits.GuildVoiceStates
+  ]
+});
+const PREFIX = "$";
 exports.PREFIX = PREFIX;
 let dbName = "grab";
 client.on("ready", async () => {
