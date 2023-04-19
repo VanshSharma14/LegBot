@@ -4,8 +4,7 @@
   "description": "Me bot",
   "main": "leg_bot.js",
   "scripts": {
-    "babel": "./node_modules/.bin/babel",
-    "build": "babel leg_bot.js",
+    "build": "",
     "start": "npm run build && node leg_bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,13 +24,8 @@
     "op.gg-api": "^2.0.5-alpha",
     "openai": "^3.0.0",
     "openai-api": "^1.3.1",
-    "puppeteer": "^19.4.0",
+    "puppeteer": "^19.7.2",
     "requests": "^0.3.0"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.20.5",
-    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
-    "@babel/preset-env": "^7.20.2"
-  }
+  "devDependencies": {}
 }

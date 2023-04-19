@@ -1,9 +1,0 @@
-{
-    "presets": [
-        "@babel/preset-env"
-    ],
-    // without options
-    "plugins": [
-        "@babel/plugin-transform-modules-commonjs"
-    ]
-}
