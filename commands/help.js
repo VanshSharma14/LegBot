@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+const { EmbedBuilder, Embed } = require("discord.js");
 const { Binary } = require("mongodb");
 const { PREFIX } = require("../leg_bot");
 const { getCommands } = require("../util");
@@ -15,10 +15,12 @@ module.exports = {
       cmdObj = commands[content[0]];
       if (cmdObj) {
         let commandsEmbed = new EmbedBuilder()
-          .setColor("AQUA")
+          .setColor("#5432a8")
           .setTitle("*" + cmdObj.name + "*")
-          .addField("Usage", PREFIX + cmdObj.usage)
-          .addField("Description", cmdObj.description);
+          .addFields(
+            { name: "Usage", value: PREFIX + cmdObj.usage },
+            { name: "Description", value: cmdObj.description }
+            );
         msg.channel.send({ embeds: [commandsEmbed] });
       } else {
         msg.channel.send(
@@ -38,7 +40,7 @@ module.exports = {
                  denotes parameters that are usually required with the command. 
                  You could also use ${PREFIX}Help <command_name> for usage and description.`
         )
-        .addField("Commands", arr.join("\n"));
+        .addFields({ name: "Commands", value: arr.join("\n") });
       msg.channel.send({ embeds: [commandsEmbed] });
     }
   },

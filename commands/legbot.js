@@ -6,7 +6,7 @@
 // module.exports = {
 //     name: "legbot",
 //     usage: "legbot <your query>",
-//     description: "Piinto uses the OpenAI chatbot API to answer and querys the user may have.",
+//     description: "Legbot uses the OpenAI chatbot API to answer and querys the user may have.",
     
 //     action: async (msg, args) => {
 //         args = args.join(" ");

@@ -11,7 +11,7 @@ module.exports = {
   action: async (msg, args) => {
     let arglen = args.length;
     let contents = args[1];
-    let type = args[0];
+    let type = args[0]; // type of search
 
     if (arglen != 2) {
       msg.reply("Usage: --grab <user/search> <@user/text>");
@@ -22,7 +22,7 @@ module.exports = {
         const arr = Array.from(messages.values());
         for (let i = 1; i < arr.length; i++) {
           // make sure it doesn't save a command
-          if (arr[i].content.includes("--")) {
+          if (arr[i].content.includes("$")) {
             continue;
           }
           // msg.reply(`<@${msg.author.id}>`)
@@ -33,8 +33,7 @@ module.exports = {
           console.log("Type: " + arr[i].content);
           console.log("username: " + username + " " + contents);
           if (
-            (type == "user" && username == contents) ||
-            (type == "search" && arr[i].content.includes(args[1]))
+            (type == "user" && username == contents) || (type == "search" && arr[i].content.toLowerCase().includes(args[1].toLowerCase()))
           ) {
             console.log("before");
             console.log(`arr[i] ${arr[i].content}`);
@@ -61,9 +60,3 @@ module.exports = {
   },
 };
 
-// obj => gm {
-//     userID: "<@23423490823490>"
-//     username: "mfk#3394"
-//     nickname: "holyNinos[maybeNums]"
-//     message: "i love cock"
-// }

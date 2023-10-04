@@ -16,7 +16,6 @@ const client = new Discord.Client({
     GatewayIntentBits.GuildMessageReactions,
     GatewayIntentBits.GuildMembers,
     GatewayIntentBits.MessageContent,
-    GatewayIntentBits.GuildBans,
     GatewayIntentBits.GuildVoiceStates
   ]
 });
@@ -57,12 +56,19 @@ client.on("messageCreate", async (msg) => {
       console.log("sendingCommand");
     }
   }
-   if (msg.content.toLowerCase().includes("ping")) {
-      msg.channel.send("pong");
-  }
-  if (msg.content.toLowerCase().includes("fix")) {
-      msg.channel.send("ur mom") 
-     //msg.reply(`<@${msg.author.id}>`)
+  if (msg.author.id != 951333435425816627){
+    if (msg.content.toLowerCase().includes("ping")) {
+        msg.channel.send("ping");
+    }
+    
+    if (msg.content.toLowerCase().includes("fix")) {
+        msg.channel.send("ur mom") 
+       //msg.reply(`<@${msg.author.id}>`)
+    }
+    
+    if (msg.content.toLowerCase().includes("slay")){
+        msg.channel.send("Just a slayer. All I do is slay. Slaying is a full-time job and I dont get paid enough for it.")
+    }
   }
 }); 
 

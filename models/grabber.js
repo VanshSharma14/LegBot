@@ -8,6 +8,10 @@ const grabScheme = new mongoose.Schema({
     quote: {
         type: String,
         required: true,
+    },
+    guild: {
+        type: String,
+        required: false,
     }
 })
 

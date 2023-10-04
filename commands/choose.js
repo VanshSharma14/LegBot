@@ -6,13 +6,7 @@ module.exports = {
     usage: "choose <option1> or <option2>",
     description: "choose between one or more options",
     action: (msg, args) => {
-        args = args.join(" ")
-        let content = args;
-        // $choose nice try
-        // "nice try"
-        if (args.includes("choose")) {
-            args = "nice try!"
-        }
+        let content = args.join(" ")
         if(args.length == 0) {
             msg.reply("At least put something there stupid!")
             return;
@@ -22,6 +16,3 @@ module.exports = {
     }
 }
 
-// !choose ansh is gay or ansh is not gay
-// !choose extra or sunglasses or shades
-// !choose
