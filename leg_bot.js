@@ -43,9 +43,7 @@ const commands = getCommands();
 
 client.on("messageCreate", async (msg) => {
   console.log(msg.content);
-  // if (msg.author.bot) {
-  //     return;
-  // }
+  // command input handling
   if (msg.content.startsWith(PREFIX)) {
     let [cmdName, ...args] = msg.content.trim().split(/ +/);
     cmdName = cmdName.slice(PREFIX.length).toLowerCase();
@@ -56,18 +54,19 @@ client.on("messageCreate", async (msg) => {
       console.log("sendingCommand");
     }
   }
+
+  // random message input handling
+  const input = msg.content.toLowerCase();
   if (msg.author.id != 951333435425816627){
-    if (msg.content.toLowerCase().includes("ping")) {
-        msg.channel.send("ping");
-    }
-    
-    if (msg.content.toLowerCase().includes("fix")) {
-        msg.channel.send("ur mom") 
-       //msg.reply(`<@${msg.author.id}>`)
-    }
-    
-    if (msg.content.toLowerCase().includes("slay")){
-        msg.channel.send("Just a slayer. All I do is slay. Slaying is a full-time job and I dont get paid enough for it.")
+    switch(input){
+      case input.includes("ping"):
+        msg.channel.send("pong");
+      case input.includes("fix"):
+        msg.channel.send("ur mom");
+      case input.includes("slay"):
+        msg.channel.send("Just a slayer. All I do is slay. Slaying is a full-time job and I dont get paid enough for it.");
+      case input.includes("work"):
+        msg.channel.send("https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fgifs%2Frihannagifs-work-ft-drake-tim-erem-l3uVwawjlGwMMblkI&psig=AOvVaw1CNONvl_3Y2uNvJ4AuNo4_&ust=1698088692710000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjj4LyvioIDFQAAAAAdAAAAABAI");
     }
   }
 }); 

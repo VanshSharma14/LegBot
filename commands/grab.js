@@ -32,9 +32,7 @@ module.exports = {
           username = `<@${arr[i].author.id}>`;
           console.log("Type: " + arr[i].content);
           console.log("username: " + username + " " + contents);
-          if (
-            (type == "user" && username == contents) || (type == "search" && arr[i].content.toLowerCase().includes(args[1].toLowerCase()))
-          ) {
+          if ((type == "user" && username == contents) || (type == "search" && arr[i].content.toLowerCase().includes(args[1].toLowerCase()))) {
             console.log("before");
             console.log(`arr[i] ${arr[i].content}`);
             try {
