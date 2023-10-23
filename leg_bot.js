@@ -58,15 +58,19 @@ client.on("messageCreate", async (msg) => {
   // random message input handling
   const input = msg.content.toLowerCase();
   if (msg.author.id != 951333435425816627){
-    switch(input){
+    switch(true){
       case input.includes("ping"):
         msg.channel.send("pong");
+        break;
       case input.includes("fix"):
         msg.channel.send("ur mom");
+        break;
       case input.includes("slay"):
         msg.channel.send("Just a slayer. All I do is slay. Slaying is a full-time job and I dont get paid enough for it.");
+        break;
       case input.includes("work"):
-        msg.channel.send("https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fgifs%2Frihannagifs-work-ft-drake-tim-erem-l3uVwawjlGwMMblkI&psig=AOvVaw1CNONvl_3Y2uNvJ4AuNo4_&ust=1698088692710000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjj4LyvioIDFQAAAAAdAAAAABAI");
+        msg.channel.send("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWtsOHo3MnRvMG82cm9zejRuM3FsdnpwMzhoMnR1aDV2a2ZtbW5tbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3uVwawjlGwMMblkI/giphy.gif");
+        break;
     }
   }
 }); 
