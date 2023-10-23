@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-docker compose down && git pull && npm install && docker compose up -d
+docker compose down && git pull && npm install && sudo docker compose build && sudo docker compose up -d
