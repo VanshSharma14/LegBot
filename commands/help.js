@@ -37,8 +37,8 @@ module.exports = {
         .setTitle("LegBot Commands")
         .setDescription(
           `use ${PREFIX} before every command. '<parameter>'
-                 denotes parameters that are usually required with the command. 
-                 You could also use ${PREFIX}Help <command_name> for usage and description.`
+          denotes parameters that are usually required with the command. 
+          You could also use ${PREFIX}Help <command_name> for usage and description.`
         )
         .addFields({ name: "Commands", value: arr.join("\n") });
       msg.channel.send({ embeds: [commandsEmbed] });
