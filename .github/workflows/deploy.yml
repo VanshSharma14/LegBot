@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main #push to main not pull req, add to 8 ball, work on hate counter
 
 jobs:
   deploy:
