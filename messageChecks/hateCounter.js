@@ -21,7 +21,7 @@ if (fs.existsSync(filePath)) {
 module.exports = {
     name: "hateCounter",
     run: (msg) => {
-        if (msg.author.id === USER_IDS.VANSH) {
+        if (msg.author.id === USER_IDS.ANSH) {
             // Ensure "hate" is a standalone word (not part of another word)
             const words = msg.content.toLowerCase().split(/\s+/);
             if (words.includes("hate")) {
