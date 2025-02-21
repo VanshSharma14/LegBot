@@ -20,7 +20,7 @@
     "dotenv": "^16.0.1",
     "fs": "^0.0.1-security",
     "install": "^0.13.0",
-    "mongodb": "^4.7.0",
+    "mongodb": "^4.17.2",
     "mongoose": "^6.3.8",
     "node-fetch": "^2.6.7",
     "op.gg-api": "^2.0.5-alpha",
