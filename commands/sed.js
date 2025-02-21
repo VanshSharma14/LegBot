@@ -21,7 +21,7 @@ module.exports = {
                     // use regular expressions
                     
                     if(arr[i].content.includes("--s")){
-                         continue;
+                        continue;
                     }
                     let regEx = new RegExp(options[0], "gi")
                     if (arr[i].content.search(regEx) >= 0 && !arr[i].author.bot) {
@@ -29,7 +29,6 @@ module.exports = {
                         const id = arr[i].author.id
                         replyMessage = `<@${id}>: ${replyMessage}`
                         msg.channel.send(replyMessage)
-                        
                         return;
                     }
                 }

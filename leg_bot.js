@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const MongoClient = require("mongodb").MongoClient;
-const { getCommands } = require("./util");
 const { Player, QueryType } = require("discord-player");
 const { GatewayIntentBits } = require("discord.js");
+const util = require("./util");
 require("dotenv").config();
 
 // declare intent
@@ -39,7 +39,7 @@ client.on("ready", async () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-const commands = getCommands();
+const commands = util.getCommands();
 
 client.on("messageCreate", async (msg) => {
   console.log(msg.content);
@@ -72,6 +72,7 @@ client.on("messageCreate", async (msg) => {
         msg.channel.send("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWtsOHo3MnRvMG82cm9zejRuM3FsdnpwMzhoMnR1aDV2a2ZtbW5tbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3uVwawjlGwMMblkI/giphy.gif");
         break;
     }
+    util.checkMessage(msg);
   }
 }); 
 

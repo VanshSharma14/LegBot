@@ -1,4 +1,4 @@
-// Define a function that choses between two options
+// This function is a command that gets the number of days since 4000 BC. It's a joke command, but it's a command nonetheless.
 module.exports = {
     name: "get-time",
     usage: "get-time <@user-optional>",
