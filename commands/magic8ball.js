@@ -23,7 +23,16 @@ module.exports = {
             "future’s looking bleak as fuck—proceed with caution",
             "cosmos screaming FUCK YEAH—run with it",
             "all signs yelling hell no—but fuck it i’m here for the popcorn",
-            "go ahead and tempt fate you wild bastard—not my circus"
+            "go ahead and tempt fate you wild bastard—not my circus",
+            "type shit",
+            "god bless america",
+            "can i put my balls in your jaw?",
+            "it is only when mosquito land on your balls that you realize there is a way to solve problems without using violence.",
+            "calculate the mean jerk-time",
+            "i dont speak italian hoe",
+            "yes dear",
+            "no lovecraftian horror compares to your ugliness.",
+            "ask again when you get gud"
         ];
 
         const randomIndex = Math.floor(Math.random() * answers.length);
